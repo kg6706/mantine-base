@@ -3,7 +3,9 @@ import './globals.css';
 
 import React from 'react';
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
-import { theme } from '../theme';
+import { QueryProvider } from '@/providers/query-provider';
+import AuthSessionProvider from '@/providers/session-provider';
+import { theme } from '@/theme';
 
 export const metadata = {
   title: 'Mantine Next.js template',
@@ -22,7 +24,13 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <AuthSessionProvider>
+          <QueryProvider>
+            <MantineProvider defaultColorScheme="light" theme={theme}>
+              {children}
+            </MantineProvider>
+          </QueryProvider>
+        </AuthSessionProvider>
       </body>
     </html>
   );
