@@ -1,7 +1,9 @@
 import { isNil, isNull, isUndefined, omitBy } from 'lodash';
 
 export const replaceDynamicParams = (template: string, params?: Record<string, string>): string => {
-  if (!params) return template;
+  if (!params) {
+    return template;
+  }
   Object.keys(params).forEach((placeholder) => {
     const value = params[placeholder];
     const regex = new RegExp(`{${placeholder}}`, 'g');
