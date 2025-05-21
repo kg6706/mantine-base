@@ -1,4 +1,7 @@
-export default {
+await import('./env.js');
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: false,
   eslint: {
     ignoreDuringBuilds: true,
@@ -7,3 +10,4 @@ export default {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
 };
+export default nextConfig;

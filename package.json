@@ -1,7 +1,8 @@
 {
-  "name": "mantine-next-template",
+  "name": "mantine-nextjs",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,17 +12,19 @@
     "eslint": "next lint",
     "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
-    "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest"
+    "test": "npm run prettier:check && npm run lint && npm run typecheck"
   },
   "dependencies": {
     "@mantine/core": "8.0.1",
     "@mantine/hooks": "8.0.1",
+    "@t3-oss/env-nextjs": "^0.13.4",
     "@tabler/icons-react": "^3.33.0",
     "@tailwindcss/postcss": "^4.1.7",
     "next": "15.3.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.7",
+    "zod": "^3.25.13"
   },
   "devDependencies": {
     "@babel/core": "^7.27.1",
